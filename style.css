@@ -1,1 +1,102 @@
-/* Add your CSS here */
+/* Global Styles */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+ background: linear-gradient(to bottom, #e6f0fa, #f8fbff);
+ color: #222;
+ line-height: 1.6;
+ text-align: center;
+}
+
+
+/* Header Section */
+header {
+ background: linear-gradient(135deg, #004aad, #0077cc);
+ color: white;
+ padding: 4rem 2rem;
+}
+
+
+header img {
+ width: 120px;
+ margin-bottom: 1rem;
+}
+
+
+header h1 {
+ font-size: 2.8rem;
+ margin-bottom: 1rem;
+ text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+header p {
+ font-size: 1.2rem;
+ max-width: 700px;
+ margin: 0 auto;
+ opacity: 0.95;
+}
+
+
+/* Timeline Section */
+section {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 2rem;
+ padding: 3rem 2rem;
+ max-width: 1200px;
+ margin: 0 auto;
+}
+
+
+/* Timeline Cards */
+section div {
+ background: white;
+ padding: 2rem;
+ border-radius: 12px;
+ box-shadow: 0px 4px 12px rgba(0, 74, 173, 0.15);
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+ border-top: 5px solid #0077cc;
+}
+
+
+section div:hover {
+ transform: translateY(-8px);
+ box-shadow: 0px 8px 20px rgba(0, 74, 173, 0.3);
+}
+
+
+/* Timeline Headings */
+section h2 {
+ font-size: 1.8rem;
+ color: #004aad;
+ margin-bottom: 0.5rem;
+}
+
+
+section h3 {
+ font-size: 1.2rem;
+ color: #0077cc;
+ margin-bottom: 1rem;
+}
+
+
+section p {
+ font-size: 1rem;
+ color: #444;
+}
+
+
+/* Footer Note */
+body > p {
+ margin: 2rem auto;
+ font-size: 1rem;
+ color: #004aad;
+ font-weight: bold;
+}/* Add your CSS here */
