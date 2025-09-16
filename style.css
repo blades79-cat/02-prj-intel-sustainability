@@ -1,1 +1,240 @@
-/* Add your CSS here */
+/* Intel Sustainability Timeline - Blue Theme Styling */
+
+/* CSS Custom Properties for Intel Brand Colors */
+:root {
+  --intel-blue: #0071c5;
+  --intel-blue-dark: #0054a3;
+  --intel-blue-light: #e1f4ff;
+  --intel-blue-gradient: linear-gradient(135deg, #0071c5 0%, #0054a3 100%);
+  --text-white: #ffffff;
+  --text-dark: #333333;
+  --text-gray: #666666;
+  --card-shadow: 0 4px 12px rgba(0, 113, 197, 0.15);
+  --card-shadow-hover: 0 8px 24px rgba(0, 113, 197, 0.25);
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: #f8f9fa;
+}
+
+/* Hero Section Styling */
+.hero {
+  background: var(--intel-blue-gradient);
+  padding: 80px 20px;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle background pattern for Intel branding */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 30px;
+  filter: brightness(0) invert(1); /* Make logo white on blue background */
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--intel-blue-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Timeline Section */
+.timeline {
+  padding: 60px 20px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 80px;
+}
+
+/* Timeline Card Styling */
+.timeline-card {
+  background: var(--text-white);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  scroll-snap-align: start;
+  border: 1px solid rgba(0, 113, 197, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Hover Effects */
+.timeline-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--intel-blue);
+}
+
+/* Timeline Year Badge */
+.timeline-year {
+  background: var(--intel-blue-gradient);
+  color: var(--text-white);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  color: var(--intel-blue-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.timeline-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-card:hover .timeline-image {
+  transform: scale(1.05);
+}
+
+.timeline-description {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Scroll Instruction */
+.scroll-instruction {
+  text-align: center;
+  color: var(--intel-blue);
+  font-weight: 600;
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+/* Custom Scrollbar for Timeline */
+.timeline::-webkit-scrollbar {
+  height: 8px;
+}
+
+.timeline::-webkit-scrollbar-track {
+  background: var(--intel-blue-light);
+  border-radius: 4px;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+  background: var(--intel-blue);
+  border-radius: 4px;
+}
+
+.timeline::-webkit-scrollbar-thumb:hover {
+  background: var(--intel-blue-dark);
+}
+
+/* Responsive Design - Mobile First */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+    min-height: 50vh;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-logo {
+    width: 80px;
+  }
+  
+  /* Stack timeline cards vertically on mobile */
+  .timeline {
+    flex-direction: column;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 40px 20px;
+  }
+  
+  .timeline-card {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .timeline-card {
+    padding: 20px;
+    min-width: auto;
+  }
+  
+  .timeline-image {
+    height: 160px;
+  }
+}
