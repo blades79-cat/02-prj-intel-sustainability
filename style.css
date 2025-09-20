@@ -1,102 +1,65 @@
-/* Global Styles */
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
+/* Ensure high color contrast for accessibility */
 body {
- background: linear-gradient(to bottom, #e6f0fa, #f8fbff);
- color: #222;
- line-height: 1.6;
- text-align: center;
+  background-color: #f7f7f7;
+  color: #222;
 }
 
-
-/* Header Section */
-header {
- background: linear-gradient(135deg, #004aad, #0077cc);
- color: white;
- padding: 4rem 2rem;
+header.bg-primary {
+  background-color: #004578 !important;
 }
 
-
-header img {
- width: 120px;
- margin-bottom: 1rem;
+footer.bg-dark {
+  background-color: #222 !important;
 }
 
-
-header h1 {
- font-size: 2.8rem;
- margin-bottom: 1rem;
- text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+.btn-outline-primary, .btn-outline-success, .btn-outline-info {
+  font-weight: 500;
 }
 
-
-header p {
- font-size: 1.2rem;
- max-width: 700px;
- margin: 0 auto;
- opacity: 0.95;
+img {
+  border: 2px solid #e0e0e0;
 }
 
-
-/* Timeline Section */
-section {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
- gap: 2rem;
- padding: 3rem 2rem;
- max-width: 1200px;
- margin: 0 auto;
+a:focus, button:focus, .form-control:focus {
+  outline: 2px dashed #007bff !important;
+  outline-offset: 2px;
+  box-shadow: none !important;
 }
 
-
-/* Timeline Cards */
-section div {
- background: white;
- padding: 2rem;
- border-radius: 12px;
- box-shadow: 0px 4px 12px rgba(0, 74, 173, 0.15);
- transition: transform 0.3s ease, box-shadow 0.3s ease;
- border-top: 5px solid #0077cc;
+footer a {
+  color: #fff;
+  transition: color 0.2s;
+}
+footer a:hover, footer a:focus {
+  color: #ffd700;
+  text-decoration: underline;
 }
 
-
-section div:hover {
- transform: translateY(-8px);
- box-shadow: 0px 8px 20px rgba(0, 74, 173, 0.3);
+/* Accordion: High contrast and easy to read */
+.accordion-button {
+  background-color: #e9ecef;
+  color: #222;
+  font-size: 1.1rem;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #d1e7dd;
+  color: #0c4128;
 }
 
-
-/* Timeline Headings */
-section h2 {
- font-size: 1.8rem;
- color: #004aad;
- margin-bottom: 0.5rem;
+/* Form accessibility & spacing */
+form .form-label {
+  font-weight: bold;
+}
+form .form-control {
+  border-radius: 0.4rem;
+}
+form .btn-primary {
+  background-color: #1976d2;
+  border: none;
 }
 
-
-section h3 {
- font-size: 1.2rem;
- color: #0077cc;
- margin-bottom: 1rem;
+@media (max-width: 767px) {
+  .row.text-center > div {
+    margin-bottom: 2rem;
+  }
 }
-
-
-section p {
- font-size: 1rem;
- color: #444;
-}
-
-
-/* Footer Note */
-body > p {
- margin: 2rem auto;
- font-size: 1rem;
- color: #004aad;
- font-weight: bold;
-}/* Add your CSS here */
